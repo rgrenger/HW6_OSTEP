@@ -36,14 +36,14 @@ int main(int argc, char *argv[]) {
     char * bArrived = "/bArrived";
     s1 = sem_open(aArrived, 0);
     s2 = sem_open(bArrived, 0);
-    pthread_create(&p1, NULL, child_1, NULL);
-    pthread_create(&p2, NULL, child_2, NULL);
-    pthread_join(p1, NULL);
-    pthread_join(p2, NULL);
-    sem_close(s1);
-    sem_close(s2);
-    sem_unlink(aArrived);
-    sem_unlink(bArrived);
+    //read_create(&p1, NULL, child_1, NULL);
+    //pthread_create(&p2, NULL, child_2, NULL);
+    //pthread_join(p1, NULL);
+    //pthread_join(p2, NULL);
+    //sem_close(s1);
+    //sem_close(s2);
+    //sem_unlink(aArrived);
+    //sem_unlink(bArrived);
     printf("parent: end\n");
     return 0;
 }
