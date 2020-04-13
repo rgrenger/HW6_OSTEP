@@ -1,6 +1,6 @@
 all: rendezvous
 
-rendezvous: common_threads_2.h rendezvous.c
+rendezvous: rendezvous.c
 	gcc -o rendezvous rendezvous.c -lpthread -lrt
 
 clean:
