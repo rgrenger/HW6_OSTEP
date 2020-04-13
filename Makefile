@@ -1,6 +1,6 @@
 all: rendezvous
 
-rendezvous: common_threads.h rendezvous.c
+rendezvous: rendezvous.c
 
 clean:
 	rm -f *.o rendezvous
