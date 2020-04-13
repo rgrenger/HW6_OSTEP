@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <semaphore.h>
 #include <pthread.h>
+#include "common_threads_2.h"
 
 // If done correctly, each child should print their "before" message
 // before either prints their "after" message. Test by adding sleep(1)
@@ -33,12 +34,12 @@ int main(int argc, char *argv[]) {
     // init semaphores here
     char * aArrived = "/aArrived";
     char * bArrived = "/bArrived";
-    s1 = sem_init(aArrived, 0);
-    s2 = sem_init(bArrived, 0);
-    Pthread_create(&p1, NULL, child_1, NULL);
-    Pthread_create(&p2, NULL, child_2, NULL);
-    Pthread_join(p1, NULL);
-    Pthread_join(p2, NULL);
+    s1 = sem_open(aArrived, 0);
+    s2 = sem_open(bArrived, 0);
+    pthread_create(&p1, NULL, child_1, NULL);
+    pthread_create(&p2, NULL, child_2, NULL);
+    pthread_join(p1, NULL);
+    pthread_join(p2, NULL);
     sem_close(s1);
     sem_close(s2);
     sem_unlink(aArrived);
