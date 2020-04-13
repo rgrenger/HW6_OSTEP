@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
     s2 = sem_open(bArrived, 0);
     pthread_create(&p1, NULL, child_1, NULL);
     pthread_create(&p2, NULL, child_2, NULL);
-    pthread_join(p1, NULL);
-    pthread_join(p2, NULL);
+    //pthread_join(p1, NULL);
+    //pthread_join(p2, NULL);
     //sem_close(s1);
     //sem_close(s2);
     //sem_unlink(aArrived);
