@@ -11,6 +11,7 @@
 sem_t *s1, *s2;
 
 void *child_1(void *arg) {
+    sleep(1);
     printf("child 1: before\n");
     // what goes here?
     sem_post(s1);
@@ -20,6 +21,7 @@ void *child_1(void *arg) {
 }
 
 void *child_2(void *arg) {
+    sleep(1);
     printf("child 2: before\n");
     // what goes here?
     sem_post(s2);
@@ -38,8 +40,8 @@ int main(int argc, char *argv[]) {
     s2 = sem_open(bArrived, 0);
     pthread_create(&p1, NULL, child_1, NULL);
     pthread_create(&p2, NULL, child_2, NULL);
-    //pthread_join(p1, NULL);
-    //pthread_join(p2, NULL);
+    pthread_join(p1, NULL);
+    pthread_join(p2, NULL);
     //sem_close(s1);
     //sem_close(s2);
     //sem_unlink(aArrived);
