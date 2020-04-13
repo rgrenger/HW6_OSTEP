@@ -34,8 +34,8 @@ int main(int argc, char *argv[]) {
     pthread_t p1, p2;
     printf("parent: begin\n");
     // init semaphores here
-    char * aArrived = "/aArrived";
-    char * bArrived = "/bArrived";
+    char *aArrived = "/aArrived";
+    char *bArrived = "/bArrived";
     s1 = sem_open(aArrived, 0);
     s2 = sem_open(bArrived, 0);
     pthread_create(&p1, NULL, child_1, NULL);
