@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <semaphore.h>
 #include <pthread.h>
-#include "common_threads_2.h"
 
 // If done correctly, each child should print their "before" message
 // before either prints their "after" message. Test by adding sleep(1)
